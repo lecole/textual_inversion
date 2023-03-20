@@ -105,6 +105,6 @@ lightning:
         max_images: 8
         increase_log_steps: False
 
-  trainer:
-    benchmark: True
-    max_steps: 6100
+trainer:
+  benchmark: True
+  max_steps: 6100
