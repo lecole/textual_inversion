@@ -11,6 +11,10 @@ imagenet_templates_smallest = [
     'a photo of a {}',
 ]
 
+imagenet_templates_custom = [
+    '{}',
+]
+
 imagenet_templates_small = [
     'a photo of a {}',
     'a rendering of a {}',
@@ -191,7 +195,7 @@ class PersonalizedBase(Dataset):
         if self.per_image_tokens and np.random.uniform() < self.mixing_prob:
             text = random.choice(imagenet_dual_templates_small).format(placeholder_string, per_img_token_list[i % self.num_images])
         else:
-            text = random.choice(imagenet_templates_small).format(placeholder_string)
+            text = random.choice(imagenet_templates_custom).format(placeholder_string)
             
         example["caption"] = text
 
